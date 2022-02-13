@@ -1,0 +1,45 @@
+package com.example.shan1
+
+import android.accounts.Account
+import android.accounts.AccountManager
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val accountManager:AccountManager =  AccountManager.get(this)
+        val accounts: Array<out Account> = accountManager.getAccountsByType("com.google")
+
+
+
+        var pwBox = findViewById(R.id.textBox1) as TextView
+        var editTextbox2 = findViewById(R.id.textBox2) as EditText
+        var editTextbox3 = findViewById(R.id.textBox3) as EditText
+        var loginButton = findViewById(R.id.loginButton) as Button
+        var createButton = findViewById(R.id.createButton) as Button
+
+
+       // val clickLogin = findViewById(R.id.loginButton)
+       // val clickCreate = findViewById(R.id.createButton)
+        loginButton.setOnClickListener{
+            val userName=editTextbox3.text
+            val password=editTextbox2.text
+            Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
+        }
+
+        createButton.setOnClickListener{
+            val userName=editTextbox3.text
+            val password=editTextbox2.text
+            Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
+            Account(userName.toString(), "com.google").also {
+                    account -> accountManager.addAccountExplicitly(account, password.toString(), null)
+            }
+        }
+    }

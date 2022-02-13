@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textBox1" type="id" />
+    <item name="textBox2" type="id" />
+    <item name="textBox3" type="id" />
+
+</resources>
+
+    <!--
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <item name="textBox2" type="id">textBox2</item>
+        <item name="textBox1" type="id">textBox1</item>
+        <item name="textBox3" type="id">textBox3</item>
+    </resources>
+
+    -->

@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
 
         var pwBox = findViewById(R.id.textBox1) as TextView
+        var pwStrText = findViewById(R.id.pwStrength) as TextView
+        var signUpText = findViewById(R.id.signUpText) as TextView
         var editTextbox2 = findViewById(R.id.textBox2) as EditText
         var editTextbox3 = findViewById(R.id.textBox3) as EditText
         var loginButton = findViewById(R.id.loginButton) as Button
@@ -42,4 +44,20 @@ class MainActivity : AppCompatActivity() {
                     account -> accountManager.addAccountExplicitly(account, password.toString(), null)
             }
         }
+
+        fun isLoginLegit(userName: String, password: String, accessCode: String, fName: String,lName: String, email: String){
+            if((userName == "testuser01") && (password == "testuser01") && (accessCode=="CLT001") && (fName=="test") && (lName=="user")&&(email=="clt@clarkatech.com"))
+                    return true //this should actually send user to the landing screen
+                    return false
+        }
+
     }
+
+
+    var name: String = ""
+    var password: String = ""
+    var email: String = ""
+
+
+
+}
